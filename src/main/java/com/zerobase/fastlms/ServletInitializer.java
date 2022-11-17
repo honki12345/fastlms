@@ -5,7 +5,7 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 
 public class ServletInitializer extends SpringBootServletInitializer {
 
-    //2022-11-17 test
+    //2022-11-17 test2
 
 
     @Override
