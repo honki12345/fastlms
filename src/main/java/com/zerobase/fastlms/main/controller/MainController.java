@@ -1,4 +1,4 @@
-package com.zerobase.fastlms;
+package com.zerobase.fastlms.main.controller;
 
 // MainPage 클래스를 만든 목적
 // (논리적인주소(인터넷주소)) + 물리적인파일
@@ -8,6 +8,8 @@ package com.zerobase.fastlms;
 // 누가 어디서 어떻게 맵핑?
 // 후보군? 클래스, 속성, 메소드
 
+import com.zerobase.fastlms.components.MailComponents;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -17,44 +19,31 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 // 주소를 맵핑해주는 클래스 -> RestController
+@RequiredArgsConstructor
 @Controller
 public class MainController {
+
+    private final MailComponents mailComponents;
 
     // 요청에 대한 맵핑
     // ("/") 인덱스라는 기능에 대한 맵핑
     @RequestMapping("/")
     public String index() {
 
-
-
+//        String email = "honki12@naver.com";
+//        String subject = "안녕하세요. 제로베이스 입니다.";
+//        String text = "<p>안녕하세요.</p><p>반갑습니다.</p>";
+//        mailComponents.sendMail(email, subject, text);
         return "index";
     }
 
-    // request -> Web brower -> Server
-    // response -> Server -> Web
-
-    @RequestMapping("/hello")
-    public void hello(HttpServletRequest request,
-                HttpServletResponse response) throws IOException {
-
-        response.setContentType("text/html;charset=UTF-8");
-        PrintWriter printWriter = response.getWriter();
-
-        String str = "<html>" +
-                "<head>" +
-                "<meta charset='UTF-8'>" +
-                "</head>" +
-                "<body>" +
-                "<p>hello</p>" +
-                "<p>fastlms website!!!</p>" +
-                "<p>안녕하세요!!!</p>" +
-                "</body>" +
-                "</html>";
+    @RequestMapping("/error/denied")
+    public String errorDenied() {
 
 
-        printWriter.write(str);
-        printWriter.close();
+        return "error/denied";
     }
+
 
 
 }
