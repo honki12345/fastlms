@@ -11,11 +11,12 @@ spring:
       ddl-auto: update
     show-sql: true
 
+#  보안상 이유로 삭제하였습니다
   mail:
-    host: smtp.gmail.com
-    port: 587
-    username: iui4793@gmail.com
-    password: echyrpxomplhzhrv
+    host:
+    port:
+    username:
+    password:
     properties:
       mail:
         smtp:
