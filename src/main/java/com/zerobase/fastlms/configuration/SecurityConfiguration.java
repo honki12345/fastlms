@@ -37,6 +37,7 @@ public class SecurityConfiguration
     protected void configure(HttpSecurity http) throws Exception {
 
         http.csrf().disable();
+        http.headers().frameOptions().sameOrigin();
 
         // 주소에 대한 권한 설정
         http.authorizeRequests()
