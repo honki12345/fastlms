@@ -37,4 +37,5 @@ build/
 /.mvn/
 /mvnw
 /mvnw.cmd
+/se2/**
 
