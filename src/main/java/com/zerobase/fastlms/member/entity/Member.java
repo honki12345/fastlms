@@ -5,10 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @AllArgsConstructor
@@ -22,6 +20,8 @@ public class Member implements MemberCode {
     private String password;
     private String phone;
     private LocalDateTime regDt;
+    private LocalDateTime udtDt; // 회원정보 수정일
+
     private String userName;
 
     private String emailAuthKey;
@@ -35,4 +35,9 @@ public class Member implements MemberCode {
     private boolean adminYn;
 
     private String userStatus; // 이용가능상태, 정지
+
+    private String zipcode;
+    private String addr;
+    private String addrDetail;
+
 }

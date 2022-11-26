@@ -20,10 +20,13 @@ public class CategoryDto {
     int sortValue;
     boolean usingYn;
 
-    public static List<CategoryDto> of (List<Category> categories) {
+    //ADD COLUMN
+    int courseCount;
+
+    public static List<CategoryDto> of(List<Category> categories) {
         if (categories != null) {
             List<CategoryDto> categoryList = new ArrayList<>();
-            for (Category x: categories) {
+            for (Category x : categories) {
                 categoryList.add(of(x));
             }
             return categoryList;

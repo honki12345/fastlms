@@ -1,6 +1,8 @@
 package com.zerobase.fastlms.course.dto;
 
 import com.zerobase.fastlms.course.entity.Course;
+import java.util.ArrayList;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -51,4 +53,28 @@ public class CourseDto {
                 .build();
 
     }
+
+    public static List<CourseDto> of(List<Course> courses) {
+
+        if (courses == null) {
+            return null;
+        }
+
+        List<CourseDto> courseList = new ArrayList<>();
+        for (Course x : courses) {
+            courseList.add(CourseDto.of(x));
+        }
+        return courseList;
+
+//        if (courses != null) {
+//            List<CourseDto> courseList = new ArrayList<>();
+//            for (Course x : courses) {
+//                courseList.add(CourseDto.of(x));
+//            }
+//            return courseList;
+//        }
+//        return null;
+
+    }
+
 }
